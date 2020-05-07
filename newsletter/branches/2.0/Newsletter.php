@@ -3,9 +3,11 @@
 namespace tiFy\Plugins\Newsletter;
 
 use Psr\Container\ContainerInterface as Container;
+use tiFy\Contracts\Form\FormFactory;
 use tiFy\Plugins\Newsletter\{
     Contracts\Newsletter as NewsletterContract,
 };
+use tiFy\Support\Proxy\Form;
 
 /**
  * @desc Extension PresstiFy de gestion de newsletter.
@@ -44,9 +46,15 @@ class Newsletter implements NewsletterContract
 
     /**
      * Instance du gestionnaire d'injection de dépendances.
-     * @var Container
+     * @var Container|null
      */
     protected $container;
+
+    /**
+     * Instance du formulaire associé.
+     * @var FormFactory|null
+     */
+    protected $form;
 
     /**
      * CONSTRUCTEUR.
@@ -72,6 +80,24 @@ class Newsletter implements NewsletterContract
     public static function instance(): ?NewsletterContract
     {
         return static::$instance;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function form(): ?FormFactory
+    {
+        if (is_null($this->form)) {
+            Form::set('newsletter-form', [
+                'fields' => [
+                    'email' => [
+                        'type' => 'text'
+                    ]
+                ]
+            ]);
+        }
+
+        return $this->form ?: null;
     }
 
     /**
