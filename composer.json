@@ -10,7 +10,7 @@
     "information"
   ],
   "homepage": "https://svn.tigreblanc.fr/presstify-plugins/newsletter",
-  "time": "2020-05-07",
+  "time": "2020-05-13",
   "license": "proprietary",
   "authors": [
     {
@@ -27,7 +27,8 @@
   ],
   "require": {
     "composer/installers": "~1.0",
-    "presstify/framework": ">=1.4"
+    "presstify/framework": ">=1.4",
+    "presstify-plugins/transaction": "^2.0"
   },
   "autoload": {
     "files": [
