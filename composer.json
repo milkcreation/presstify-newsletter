@@ -9,20 +9,13 @@
     "contact",
     "information"
   ],
-  "homepage": "https://svn.tigreblanc.fr/presstify-plugins/newsletter",
-  "time": "2020-05-13",
-  "license": "proprietary",
+  "homepage": "https://github.com/milkcreation/presstify-newsletter.git",
+  "time": "2021-09-14",
   "authors": [
     {
       "name": "Jordy Manner",
       "email": "jordy.manner@milkcreation.fr",
       "role": "Developper"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://composer.tigreblanc.fr/presstify"
     }
   ],
   "require": {
